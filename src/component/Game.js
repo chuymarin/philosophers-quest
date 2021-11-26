@@ -11,85 +11,117 @@ class Game extends Component {
     super(props);
     this.state = {
       game: {
-        setGameDifficulty: this.setGameDifficulty(),
-        startGame: this.startGame(),
-        gameStarted: true,
-        restartGame: this.restartGame(),
+        gameStarted: false,
         gameOver: false,
-        checkAnswer: this.checkAnswer(),
         philosophersList: data,
         philosopherDefeated: false,
         defeatedPhilosophers: [],
-        continue: this.continue()
       },
       philosopher: {},
       player: {
-        setName: this.setPlayerName(),
-        name: "Chuy",
+        name: "Player",
         lifePoints: 10,
         battlePoints: 0
       }
-    }
+    };
+    this.setPlayerName = this.setPlayerName.bind(this);
+    this.setGameDifficulty = this.setGameDifficulty.bind(this);
+    this.startGame = this.startGame().bind(this);
+    this.restartGame = this.restartGame().bind(this);
+    this.checkAnswer = this.checkAnswer().bind(this);
+    this.continue = this.continue().bind(this);
   }
 
-  setPlayername(playerName) {
-    this.state.player.name = playerName
+  setPlayerName = (playerName) => {
+    this.setState((state, props) => ({
+      player: {
+        name: playerName
+      }
+    }));
   }
 
-  setGameDifficulty(difficulty) {
-    const newState = this.state;
+  setGameDifficulty = (difficulty) => {
+    let newLifePoints = 10;
+
     switch(difficulty) {
       case "easy":
-        newState.player.lifePoints = 30;
-        this.setState({state: newState});
+        newLifePoints = 30;
         break;
       case "medium":
-        newState.player.lifePoints = 20;
-        this.setState({state: newState});
+        newLifePoints = 20;
         break;
       case "hard":
-        newState.player.lifePoints = 10;
-        this.setState({state: newState});
+        newLifePoints = 10;
         break;
       default:
-        newState.player.lifePoints = 30;
-        this.setState({state: newState});
+        newLifePoints = 30;
     }
+
+    this.setState((state, props) => ({
+      player: {
+        lifePoints: newLifePoints
+      }
+    }));
   }
 
-  startGame() {
-    this.state.game.gameStarted = true;
-    this.state.philosopher = this.state.game.philosophersList[Math.floor(Math.random() * this.state.game.philosophersList.length)];
+  startGame = () => {
+    this.setState((state, props) => ({
+      game: {
+        gameStarted: true
+      },
+      philosopher: this.state.game.philosophersList[Math.floor(Math.random() * this.state.game.philosophersList.length)]
+    }));
   }
 
-  restartGame() {
-    this.state.game.gameStarted = true
-    this.state.game.gameOver = false
+  restartGame = () => {
+    this.setState((state, props) => ({
+      game: {
+        gameStarted: true,
+        gameOver: false
+      },
+      philosopher: state.game.philosophersList[Math.floor(Math.random() * state.game.philosophersList.length)]
+    }));
   }
 
   checkAnswer(answerId) {
     if (answerId === this.state.philosopher.id) {
-      this.state.game.philosopherDefeated = true;
-      this.state.player.battlePoints = this.state.player.battlePoints + 1
+      this.setState((state, props) => ({
+        game: {
+          philosopherDefeated: true
+        },
+        player: {
+          battlePoints: state.player.battlePoints ++,
+        }
+      }));
     } else {
-      this.state.player.lifePoints = this.state.player.lifePoints -1
+      this.setState((state, props) => ({
+        player: {
+          lifePoints: state.player.lifePoints --,
+        }
+      }));
     }
 
     if (this.state.player.lifePoints <= 0) {
-      this.state.gameOver = true
+      this.setState((state, props) => ({
+        game: {
+          gameOver: true
+        }
+      }));
     }
   }
 
   continue() {
     // add philosopher to defeatedPhilosophers[]
     // remove philosopher from philosophersList[]
-    this.state.philosopher = this.state.game.philosophersList[Math.floor(Math.random() * this.state.game.philosophersList.length)]
-    this.state.game.philosopherDefeated = false;
+    this.setState((state, props) => ({
+      game: {
+        philosopherDefeated: false
+      },
+      philosopher: state.game.philosophersList[Math.floor(Math.random() * state.game.philosophersList.length)]
+    }));
   }
 
   render() {
-    console.log(data);
-    console.log(this.state.game.philosophersList);
     if (this.state.game.gameStarted === false && this.state.game.gameOver === false) {
      return (
        <div>intro</div>
