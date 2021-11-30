@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BossStats from './BossStats';
 import PlayerStats from './PlayerStats';
-import GameScene from './GameScene';
 import philosophersData from  './data/philosophersData.json'
 import dialogsData from  './data/dialogsData.json'
 import './Game.css';
@@ -14,6 +13,7 @@ class Game extends Component {
       game: {
         gameStarted: false,
         gameOver: false,
+        gameCompleted: false,
         philosophersList: philosophersData,
         dialogsList: dialogsData,
         philosopherDialog: [],
@@ -34,7 +34,12 @@ class Game extends Component {
     this.getRandomPhilosophersList = this.getRandomPhilosophersList.bind(this);
     this.restartGame = this.restartGame.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
+    this.philosopherDefeated = this.philosopherDefeated.bind(this);
+    this.wrongAnswer = this.wrongAnswer.bind(this);
+    this.gameOver = this.gameOver.bind(this);
     this.continue = this.continue.bind(this);
+    this.gameCompleted = this.gameCompleted.bind(this);
+    this.continueBattle = this.continueBattle.bind(this);
   }
 
   setPlayerName = (evt) => {
@@ -86,7 +91,7 @@ class Game extends Component {
     let initDialog = "Hola yo soy " + newPhilosopher.name + " Para dejarte pasar, tienes que decir cual es mi " + newPhilosopher.type;
     newPhilosopherDialog.push(initDialog);
     let randomPhilosophersList = this.getRandomPhilosophersList();
-    // randomPhilosophersList.push(newPhilosopher);
+    randomPhilosophersList.push(newPhilosopher);
     this.setState((state, props) => ({
       game: {
         ...state.game,
@@ -98,81 +103,131 @@ class Game extends Component {
     }));
   }
 
-  restartGame = () => {
-    this.setState((state, props) => ({
-      game: {
-        ...state.game,
-        gameStarted: false,
-        gameOver: false
-      }
-    }));
-  }
-
-  checkAnswer = (evt) => {
-    if (evt.target.value === this.state.philosopher.id) {
-      this.setState((state, props) => ({
-        game: {
-          ...state.game,
-          philosopherDefeated: true
-        },
-        player: {
-          ...state.player,
-          battlePoints: state.player.battlePoints ++,
-        }
-      }));
+  checkAnswer = (e) => {
+    if (parseInt(e.target.dataset.id) === this.state.philosopher.id) {
+      this.philosopherDefeated();
     } else {
-      let newPhilosopherDialog = this.state.game.philosopherDialog;
-      let newRandomDialog = this.state.game.dialogsList.sort()
-      newPhilosopherDialog.push(newRandomDialog[0]);
-      this.setState((state, props) => ({
-        game: {
-          ...state.game,
-          philosopherDialog: newPhilosopherDialog
-        },
-        player: {
-          ...state.player,
-          lifePoints: state.player.lifePoints --,
-        }
-      }));
-    }
-
-    if (this.state.player.lifePoints <= 0) {
-      this.setState((state, props) => ({
-        game: {
-          ...state.game,
-          gameOver: true
-        }
-      }));
+      this.wrongAnswer();
     }
   }
 
-  continue = () => {
+  philosopherDefeated = () => {
     // add defeatedPhilosopher to defeatedPhilosophers
     // remove defeatedPhilosopher from philosophersList
     let defeatedPhilosopher = this.state.philosopher;
-    let newDefeatedPhilosophers = this.state.game.defeatedPhilosophers.push(defeatedPhilosopher);
-    let newPhilosophersList = this.state.game.philosophersList.splice(this.state.game.philosophersList.findIndex(philosopher => philosopher.name === defeatedPhilosopher.name), 1)
+    let newDefeatedPhilosophers = this.state.game.defeatedPhilosophers;
+    newDefeatedPhilosophers.push(defeatedPhilosopher);
+    let newPhilosophersList = this.state.game.philosophersList;
+    newPhilosophersList = newPhilosophersList.filter(philosopher => philosopher.id != this.state.philosopher.id);
+    let newPhilosopherDialog = this.state.game.philosopherDialog;
+    newPhilosopherDialog.push("Has acertado, te dejare pasar");
     this.setState((state, props) => ({
       game: {
         ...state.game,
+        philosopherDefeated: true,
         defeatedPhilosophers: newDefeatedPhilosophers,
         philosophersList: newPhilosophersList,
-        philosopherDialog: []
+        philosopherDialog: newPhilosopherDialog
+      },
+      player: {
+        ...state.player,
+        battlePoints: state.player.battlePoints +1,
       }
     }));
-    // set new philosopher
-    let newPhilosopher = this.state.game.philosophersList[Math.floor(Math.random() * this.state.game.philosophersList.length)];
-    this.setState((state, props) => ({
-      ...state.philosopher,
-      philosopher: newPhilosopher,
-    }));
-    // get new randomPhilosophersList
-    let newRandomPhilosophersList = this.getRandomPhilosophersList();
+  }
+
+  wrongAnswer = () => {
+    let newPhilosopherDialog = this.state.game.philosopherDialog;
+    let newRandomDialog = this.state.game.dialogsList[Math.floor(Math.random() * this.state.game.dialogsList.length)];
+    let newLifePoints = this.state.player.lifePoints -1;
+    if (newLifePoints <= 0) {
+      newPhilosopherDialog.push("Has perdido esta batalla");
+    } else {
+      newPhilosopherDialog.push(newRandomDialog);
+    }
     this.setState((state, props) => ({
       game: {
         ...state.game,
+        philosopherDialog: newPhilosopherDialog
+      },
+      player: {
+        ...state.player,
+        lifePoints: newLifePoints,
+      }
+    }));
+  }
+
+  continue = () => {
+    if (this.state.game.philosophersList.length === 0){
+      this.gameCompleted();
+    } else if (this.state.player.lifePoints <= 0){ 
+      this.gameOver();
+    } else {
+      this.continueBattle();
+    }
+  }
+
+  continueBattle = () => {
+    // set new philosopher
+    let newPhilosopher = this.state.game.philosophersList[Math.floor(Math.random() * this.state.game.philosophersList.length)];
+    // set philosopher dialog
+    let newPhilosopherDialog = [];
+    let initDialog = "Hola yo soy " + newPhilosopher.name + " Para dejarte pasar, tienes que decir cual es mi " + newPhilosopher.type;
+    newPhilosopherDialog.push(initDialog);
+    // get new randomPhilosophersList
+    let newRandomPhilosophersList = this.getRandomPhilosophersList();
+    newRandomPhilosophersList.push(newPhilosopher);
+    // set state
+    this.setState((state, props) => ({
+      philosopher: newPhilosopher,
+      game: {
+        ...state.game,
+        philosopherDialog: newPhilosopherDialog,
         randomPhilosophersList: newRandomPhilosophersList,
         philosopherDefeated: false
+      }
+    }));
+  }
+
+  gameCompleted = () => {
+    this.setState((state, props) => ({
+      game: {
+        ...state.game,
+        gameCompleted: true
+      }
+    }));
+  }
+
+  gameOver = () => {
+    // agregar texto de que el juego fallo
+    // al estar en game over tarda un click mas en en salir game over
+    this.setState((state, props) => ({
+      game: {
+        ...state.game,
+        gameOver: true
+      }
+    }));
+  }
+
+  restartGame = () => {
+    // falta reiniciar valores al darle continuar
+    this.setState((state, props) => ({
+      game: {
+        gameStarted: false,
+        gameOver: false,
+        gameCompleted: false,
+        philosophersList: philosophersData,
+        dialogsList: dialogsData,
+        philosopherDialog: [],
+        philosopherDefeated: false,
+        defeatedPhilosophers: [],
+        randomPhilosophersList: []
+      },
+      philosopher: {},
+      player: {
+        name: "Player",
+        lifePoints: 10,
+        battlePoints: 0
       }
     }));
   }
@@ -205,14 +260,55 @@ class Game extends Component {
           <button onClick={this.restartGame}>Reiniciar Juego</button>
        </div>
        )
-    } else if (this.state.game.gameStarted === true && this.state.game.gameOver === false) {
+    } else if (this.state.game.gameStarted === true && this.state.game.gameOver === false && this.state.game.gameCompleted === true) {
+      return (
+        <div className="GameCompleted">
+          <h1>Felicidades, has terminado el juego</h1>
+          <button onClick={this.restartGame}>Reiniciar Juego</button>
+       </div>
+       )
+    } else if (this.state.game.gameStarted === true && this.state.game.gameOver === false && this.state.game.gameCompleted === false) {
       return (
         <div className="Game">
           <div className="GameHeader">
             <BossStats state={this.state}/>
           </div>
           <div className="GameBody">
-            <GameScene state={this.state} />
+            <div className="GameScene">
+              <div className="BossArea">
+                <div className="BossRiddleArea">
+                {this.state.game.philosopherDialog.map(dialog => (
+                  <p className="BossRiddleText">{dialog}.</p>
+                ))}
+                <p className="BossRiddleText">
+                {this.state.game.philosopherDefeated &&
+                  <button onClick={this.continue}>Continuar</button>
+                }
+                {this.state.game.gameCompleted &&
+                  <button onClick={this.continue}>Continuar</button>
+                }
+                {this.state.player.lifePoints <= 0 &&
+                  <button onClick={this.continue}>Continuar</button>
+                }
+                </p>
+                </div>
+                <div className="BossImageArea">
+                  <img className="BossImage" src={"./assets/" + this.state.philosopher.image} alt={this.state.philosopher.name} />
+                </div>
+              </div>
+              <div className="PlayerArea">
+                <div className="PlayerImageArea">
+                  <img className="PlayerImage" src="./assets/frodo.png" alt="Frodo" />
+                </div>
+                <div className="PlayerAnswerArea">
+                  <ul className="PlayerAnswerList">
+                  {this.state.game.randomPhilosophersList.map(philosopher => (
+                    <li className="PlayerAnswerOption" onClick={this.checkAnswer.bind(this)} data-id={philosopher.id}>{philosopher.answer}.</li>
+                  ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="GameFooter">
             <PlayerStats state={this.state}/>

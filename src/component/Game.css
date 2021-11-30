@@ -84,10 +84,12 @@
     border: 2px solid white;
     margin-bottom: 10px;
     padding: 5px;
+    display: block;
 }
 
 .PlayerAnswerOption:hover {
     border: 2px solid yellow;
+    display: block;
 }
 
 .BossRiddleArea {
