@@ -24,7 +24,7 @@ class Game extends Component {
       philosopher: {},
       player: {
         name: "Player",
-        lifePoints: 10,
+        lifePoints: 30,
         battlePoints: 0
       }
     };
@@ -237,19 +237,19 @@ class Game extends Component {
     if (this.state.game.gameStarted === false && this.state.game.gameOver === false) {
      return (
        <div className="Intro">
-          <h1>Philosopher's Quest Game</h1>
-          <div className="PlayerName">
-            <p>Escribe tu nombre</p>
-            <input type="text" value={this.state.player.name} onChange={evt => this.setPlayerName(evt)} /> 
+          <h1 className="title">Philosopher's Quest Game</h1>
+          <div className="column">
+            <p className="label">Escribe tu nombre</p>
+            <p className="label">Selecciona la dificultad</p>
+            <button className="button" onClick={this.startGame}>Iniciar Juego</button>
           </div>
-          <div>
-            <p>Selecciona la dificultad</p>
-            <input type="radio" name="difficulty" value="facil" onChange={evt => this.setGameDifficulty(evt)} /> Facil
-            <input type="radio" name="difficulty" value="normal" onChange={evt => this.setGameDifficulty(evt)} /> Normal
-            <input type="radio" name="difficulty" value="dificil" onChange={evt => this.setGameDifficulty(evt)} /> Dificil
-          </div>
-          <div>
-            <button onClick={this.startGame}>Iniciar Juego</button>
+          <div className="column">
+            <input className="input" type="text" value={this.state.player.name} onChange={evt => this.setPlayerName(evt)} />
+            <select className="select" name="difficulty" id="difficulty" onChange={evt => this.setGameDifficulty(evt)}>
+              <option value="facil">Facil</option>
+              <option value="normal">Normal</option>
+              <option value="dificil">Dificil</option>
+            </select>
           </div>
        </div>
       )
@@ -293,17 +293,17 @@ class Game extends Component {
                 </p>
                 </div>
                 <div className="BossImageArea">
-                  <img className="BossImage" src={"./assets/" + this.state.philosopher.image} alt={this.state.philosopher.name} />
+                  <img className="BossImage" src={"http://philosophers-quest-game.s3-website-us-east-1.amazonaws.com/assets/" + this.state.philosopher.image} alt={this.state.philosopher.name} />
                 </div>
               </div>
               <div className="PlayerArea">
                 <div className="PlayerImageArea">
-                  <img className="PlayerImage" src="./assets/frodo.png" alt="Frodo" />
+                  <img className="PlayerImage" src="http://philosophers-quest-game.s3-website-us-east-1.amazonaws.com/assets/frodo.png" alt="Frodo" />
                 </div>
                 <div className="PlayerAnswerArea">
                   <ul className="PlayerAnswerList">
                   {this.state.game.randomPhilosophersList.map(philosopher => (
-                    <li className="PlayerAnswerOption" onClick={this.checkAnswer.bind(this)} data-id={philosopher.id}>{philosopher.answer}.</li>
+                    <li className="PlayerAnswerOption" onClick={this.checkAnswer.bind(this)} data-id={philosopher.id}>- {philosopher.answer}.</li>
                   ))}
                   </ul>
                 </div>
