@@ -1,30 +1,439 @@
 [
   {
     "id": 1,
-    "name": "Aristoteles",
-    "type": "paradigma",
-    "answer": "Paradigma de Aristoteles",
-    "image": "aristoteles.jpg"
+    "name": "Pitágoras",
+    "type": "Tesis central",
+    "answer": "La suma de los cuadrados de los catetos es igual al cuadrado de la hipotenusa.",
+    "image": "pitagotas.jpg"
   },
   {
     "id": 2,
-    "name": "Socrates",
-    "type": "metodo",
-    "answer": "Metodo Socratico",
-    "image": "socrates.jpg"
+    "name": "Demócrito ",
+    "type": "Paradigma",
+    "answer": "Discípulo de Leucipo, maestro de Protágoras, se le considera presocrático, pero fue contemporáneo a Sócrates. ",
+    "image": "democrito.jpg"
   },
   {
     "id": 3,
-    "name": "Platon",
-    "type": "metodo",
-    "answer": "platon",
-    "image": "platon.jpg"
+    "name": "Parménides ",
+    "type": "Paradigma",
+    "answer": "Recae en que el “ser” es una unidad indivisible, finito, inmutable e ingénito, elemento único que da comienzo a todas las cosas en el universo.",
+    "image": "parmenides.jpg"
   },
   {
     "id": 4,
-    "name": "Pitagoras",
-    "type": "metodo",
-    "answer": "pitagoras",
-    "image": "pitagoras.jpg"
+    "name": "Séneca",
+    "type": "Paradigma",
+    "answer": "La escuela estoica que vivió por influencia de su padre le formó criterios basados en que el bien no está en los objetos externos, sino en la sabiduría y dominio del alma",
+    "image": "seneca.jpg"
+  },
+    {
+    "id": 5,
+    "name": "Sócrates",
+    "type": "Tesis central",
+    "answer": "Método socrático, consistía en un estilo de conversación diseñado para sacar a la luz las contradicciones entre las distintas creencias de las personas.",
+    "image": "socrates.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Platón",
+    "type": "Método",
+    "answer": "Método socrático-DEDUCTIVO",
+    "image": "platon.jpg"
+  },
+    {
+    "id": 7,
+    "name": "Aristóteles",
+    "type": "Método",
+    "answer": "Inductivo y deductivo, a través de la observación, y la experimentación, hace inducciones, para luego la formulación de la teoría, deductivo.",
+    "image": "aristoteles.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Nicolás Copérnico",
+    "type": "Tesis central",
+    "answer": "Interpretación natural y racional de las relaciones entre el universo, la Tierra y el hombre.",
+    "image": "copernico.jpg"
+  },
+    {
+    "id": 9,
+    "name": "Alexander Fleming",
+    "type": "Tesis central",
+    "answer": "Descubrimiento de la penicilina, por sus efectos antibióticos en cultivos bacterianos, a partir del hongo Penicillium notatum.",
+    "image": "fleming.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Antonie Lavoisier",
+    "type": "Paradigma",
+    "answer": "Radica en la necesidad de la observación y experimentación que permitan la constatación de los hallazgos, lo que le permitió formular la ley de la conservación de la materia.",
+    "image": "lavoisier.jpg"
+  },
+
+  {
+    "id": 11,
+    "name": "Robert Hooke",
+    "type": "Tesis central",
+    "answer": "Instrumento náutico para medir la altura y distancia angular de los astros.",
+    "image": "hooke.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Bertrand Russell",
+    "type": "Método",
+    "answer": "Metodología de la análisis y método inductivo.",
+    "image": "russell.jpg"
+  },
+  {
+    "id": 13,
+    "name": "George Eduard Moore",
+    "type": "Paradigma",
+    "answer": "Retomó la tradición del realismo anglosajón frente al clima idealista de principios de siglo, al que opuso una serie de verdades cotidianas, como la existencia del tiempo o de los objetos exteriores a la propia conciencia.",
+    "image": "moore.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Gottlob Frege",
+    "type": "Paradigma",
+    "answer": "Estaba convencido de que las matemáticas y el lenguaje podían ser reducidos a la lógica.",
+    "image": "frege.jpg"
+  },
+    {
+    "id": 15,
+    "name": "Hans Reichenbach",
+    "type": "Tesis central",
+    "answer": "La razón es la sustancia de la que todas las cosas derivan su ser",
+    "image": "reichenbach.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Carl G. Hempel",
+    "type": "Método",
+    "answer": "Deductivo, ya que en base a una inferencia o lógica en la que siempre debe aparecer reflejada una ley general.",
+    "image": "hempel.jpg"
+  },
+    {
+    "id": 17,
+    "name": "Rudolf Carnap",
+    "type": "Método",
+    "answer": "Utiliza el método inductivo, poniendo en práctica el razonamiento, parte de una evidencia singular y sugiere la posibilidad de una conclusión universal, por tanto, es consistente con el método científico.",
+    "image": "carnap.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Peter Gabriel Bergmann",
+    "type": "Paradigma",
+    "answer": "Sus padres dedicados a la química y medicina, lo que influye en su formación hacia la ciencia a lo que le sumó su supervivencia en la guerra Nazi que llega a crearle paradigmas sobre la construcción humana en el ámbito científico.",
+    "image": "bergmann.jpg"
+  },
+    {
+    "id": 19,
+    "name": "J.M. Bochensky",
+    "type": "Tesis central",
+    "answer": "Método de análisis y síntesis, su tesis se basa bajo corriente hacia el tomismo y fenomenología.",
+    "image": "bochenski.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Friedrich Waismann",
+    "type": "Paradigma",
+    "answer": "La filosofía se centró en el campo de la filosofía del lenguaje, denominada corriente analítica, cuyo iniciador fue M. Schlick, y que pretende llevar a cabo un análisis lógico del lenguaje.",
+    "image": "waismann.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Wilhelm Reich",
+    "type": "Paradigma",
+    "answer": "Paradigma científico basado en los avances de la medicina, rodeado de celebridades en el Circulo de Viena.",
+    "image": "reich.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Ernest Nagel",
+    "type": "Tesis central",
+    "answer": "La investigación controladas, su obra fundamental es a estructura de la ciencia.",
+    "image": "nagel.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Clarence Irving Lewis",
+    "type": "Tesis central",
+    "answer": "El pragmatismo conceptualista, por el cual el conocimiento empírico depende de un sentido dado, de la actividad constructiva de la mente y de un conjunto de conceptos a priori.",
+    "image": "lewis.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Ludwig J. Wittgenstein",
+    "type": "Método",
+    "answer": "Utiliza el método inductivo, poniendo en práctica el razonamiento, parte de una evidencia singular y sugiere la posibilidad de una conclusión universal, por tanto, es consistente con el método científico.",
+    "image": "wittgenstein.jpg"
+  },
+    {
+    "id": 25,
+    "name": "Auguste Comte",
+    "type": "Paradigma",
+    "answer": "Desarrolló la filosofía en un intento de remediar el desorden social causado por la revolución francesa.",
+    "image": "comte.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Ernest Mach",
+    "type": "Tesis central",
+    "answer": "Integración de la física con la psicología",
+    "image": "mach.jpg"
+  },
+    {
+    "id": 27,
+    "name": "Henri Poincaré",
+    "type": "Tesis central",
+    "answer": "Tipología algebraica. Teoría de funciones analíticas de varias variables complejas. Teoría de funciones abelianas. Geometría algebraica. Teoría de números.",
+    "image": "poincare.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Pierre Duhem",
+    "type": "Método",
+    "answer": "Metodología: Científica y Estudios históricos, documentales: Deductiva.",
+    "image": "duhem.jpg"
+  },
+    {
+    "id": 29,
+    "name": "Issac Newton",
+    "type": "Paradigma",
+    "answer": "Aquellos: que parten de hipótesis como primeros principios de sus especulaciones, aunque procedan luego con la mayor precisión a partir de esos principios, pueden componer una fábula ingeniosa, pero no dejará de ser una fábula.",
+    "image": "newton.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Albert Einstein",
+    "type": "Método",
+    "answer": "Logró dilucidar leyes del universo a través del método deductivo, sin experimentación, a partir de predicciones, hipótesis, estudios, comparaciones y fórmulas matemáticas.",
+    "image": "einsten.jpg"
+  },
+
+  {
+    "id": 31,
+    "name": "David Hume",
+    "type": "Paradigma",
+    "answer": "Radica en expresar que el conocimiento se construye a partir de la experiencia y se apoya de la ciencia para su entendimiento.",
+    "image": "hume.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Immanuel Kant",
+    "type": "Método",
+    "answer": "Científico-Hipotético deductivo. En relación con su metodología filosófica, utiliza método transcendental.",
+    "image": "kant.jpg",
+  },
+  {
+    "id": 33,
+    "name": "Georg Wilhelm Friedrich Hegel",
+    "type": "Tesis central",
+    "answer": "Retoma el método de la dialéctica.",
+    "image": "hegel.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Karl Popper",
+    "type": "Paradigma",
+    "answer": "Defensa de la democracia liberal y los principios de crítica social en una sociedad abierta.",
+    "image": "popper.jpg"
+  },
+    {
+    "id": 35,
+    "name": "Mario Bunge",
+    "type": "Método",
+    "answer": "Método deductivo, al analizar las generalidades de la historia de los postulados filosóficos. Historiográfico y analítico.",
+    "image": "bunge.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Irme Lakatos",
+    "type": "Método",
+    "answer": "Sostenía que la falsación consiste en un doble enfrentamiento entre dos teorías rivales y la experiencia.",
+    "image": "lakatos.jpg"
+  },
+    {
+    "id": 37,
+    "name": "Thomas Kuhn",
+    "type": "Paradigma",
+    "answer": "Los avances científicos del siglo XX influenciaron en su perspectiva de la ciencia, sobre todo los avances científicos de Albert Einstein.",
+    "image": "kuhn.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Gregorio Klimovsky",
+    "type": "Tesis central",
+    "answer": "Introducción de la lógica matemática y de la teoría axiomática de conjuntos.",
+    "image": "klimovsky.jpg"
+  },
+    {
+    "id": 39,
+    "name": "Paul Feyerabend",
+    "type": "Paradigma",
+    "answer": "Rechazo a la universalidad de las reglas debido a que no hay conocimiento enteramente cierto. No hay conocimientos ciertos y no se sabe qué paradigmas dominarán la ciencia.",
+    "image": "feyerabend.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Eduardo Cesarman",
+    "type": "Paradigma",
+    "answer": "Fue cardiólogo y escritor, hizo sus estudios de medicina en la UNAM, se especializó en Estados Unidos, (especialidad en Cardiología en la Universidad de Cornell, Nueva York).",
+    "image": "cesarman.jpg"
+  },
+
+  {
+    "id": 41,
+    "name": "Larry Laudan",
+    "type": "Paradigma",
+    "answer": "Resalta el contexto histórico en el que surgen las tradiciones de investigación, las cuales evolucionan siempre dentro de los antecedentes desde donde surgieron.",
+    "image": "laudan.jpg"
+  },
+  {
+    "id": 42,
+    "name": "Iván P. Pávlov",
+    "type": "Tesis central",
+    "answer": "Teoría del Condicionamiento clásico. Aprendizaje Estímulo-Respuesta. (E-R).",
+    "image": "pavlov.jpg"
+  },
+  {
+    "id": 43,
+    "name": "John B. Watson",
+    "type": "Tesis central",
+    "answer": "Teoría conductista del aprendizaje.",
+    "image": "watson.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Burrhus Frederic Skinner",
+    "type": "Tesis central",
+    "answer": "Teoría conductista: basada en la idea de que los eventos relacionados con el aprendizaje cambian o modifican nuestro comportamiento y nuestras maneras de actuar de acuerdo con ciertas circunstancias, y de los denominados estímulos ",
+    "image": "skinner.jpg"
+  },
+    {
+    "id": 45,
+    "name": "Edward C. Tolman",
+    "type": "Tesis central",
+    "answer": "Teoría intencional: Su objetivo era entender los principios del comportamiento, pero rechazando la idea de que toda la conducta tiene que ver con una simple relación estímulo – respuesta.",
+    "image": "toleman.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Edwin Guthrie",
+    "type": "Paradigma",
+    "answer": "El aprendizaje por ensayo y error era fundamental, el eje principal del aprendizaje.Se enfoca en la psicología desde una perspectiva conductual y utiliza los principios del condicionamiento.",
+    "image": "guthrie.jpg"
+  },
+    {
+    "id": 47,
+    "name": "Albert Bandura",
+    "type": "Tesis central",
+    "answer": "Teoría del aprendizaje social.",
+    "image": "bandura.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Max Wertheimer, Wolfgang Köhler, Kurt Koffka",
+    "type": "Paradigma",
+    "answer": "Teoría de la Gestalt: aprendizaje de la restructuración perceptual: Los seres humanos y otros animales aprenden pensando, no sólo mediante imitación o por el condicionamiento.",
+    "image": "koffka.jpg"
+  },
+    {
+    "id": 49,
+    "name": "Robert Gagné",
+    "type": "Tesis central",
+    "answer": "Teoría del aprendizaje.",
+    "image": "gagne.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Jean W. Fritz Piaget",
+    "type": "Tesis central",
+    "answer": "Teoría del desarrollo cognitivo de Piaget, que los niños nacen con un mapa mental muy básico y sencillo sobre lo que es el mundo. Pero que, gracias al aprendizaje, van conformando su mapa mental sobre el mundo que les rodea y el suyo propio.",
+    "image": "piaget.jpg"
+  },
+  {
+    "id": 51,
+    "name": "Lawrence Kohlberg",
+    "type": "Método",
+    "answer": "Teoría del desarrollo moral: El método que utiliza es el inductivo, ya que comienza de una etapa inicial para después alcanzar la cumbre.",
+    "image": "kohlberg.jpg"
+  },
+  {
+    "id": 52,
+    "name": "Roger Wolcott Sperry",
+    "type": "Método",
+    "answer": "Teoría del aprendizaje desde las neurociencias, utiliza el método inductivo, poniendo en práctica el razonamiento.",
+    "image": "sperry.jpg"
+  },
+  {
+    "id": 53,
+    "name": "David Ausubel",
+    "type": "Tesis central",
+    "answer": "Teoría del aprendizaje significativo, los nuevos conceptos que deben ser aprendidos, se pueden incorporar a otros conceptos o ideas más inclusivas.",
+    "image": "ausubel.jpg"
+  },
+  {
+    "id": 54,
+    "name": "Joseph Novak",
+    "type": "Tesis central",
+    "answer": "Teoría de los mapas conceptuales.",
+    "image": "novak.jpg"
+  },
+    {
+    "id": 55,
+    "name": "Jerome Bruner",
+    "type": "Paradigma",
+    "answer": "Aprendizaje por descubrimiento: una enseñanza centrada en el alumno y sus características, dejando de lado la mera transmisión de conocimientos que no tienen sentido para los niños.",
+    "image": "bruner.jpg"
+  },
+  {
+    "id": 56,
+    "name": "John Robert Anderso",
+    "type": "Tesis central",
+    "answer": "Creador de la teoría: Adaptive Control of Tought rational. (ACT-R).",
+    "image": "anderso.jpg"
+  },
+    {
+    "id": 57,
+    "name": "Lev Vygotsky",
+    "type": "Método",
+    "answer": "Método: Analítico",
+    "image": "vygotsky.jpg"
+  },
+  {
+    "id": 58,
+    "name": "Paulo Fraire",
+    "type": "Paradigma",
+    "answer": "Su perspectiva se vio influido por el ambiente político en el que vivió, sobre todo por los golpes de estado, encarcelamiento y destierro de Brasil.",
+    "image": "fraire.jpg"
+  },
+    {
+    "id": 59,
+    "name": "Carl Roger",
+    "type": "Tesis central",
+    "answer": "Terapia centrada en la persona.",
+    "image": "tcPersona.jpg"
+  },
+  {
+    "id": 60,
+    "name": "Rubem Alves",
+    "type": "Paradigma",
+    "answer": "Reivindica el derecho de los niños y niñas a vivir una escolaridad plena, en la que los maestros han de enseñar con alegría y que enseñar es un ejercicio de moralidad.",
+    "image": "alves.jpg"
+  },
+  {
+    "id": 61,
+    "name": "Sigmund Freud",
+    "type": "Tesis central",
+    "answer": "Fundador del psicoanálisis.",
+    "image": "freud.jpg"
+  },
+    {
+    "id": 62,
+    "name": "Noam Chomsky",
+    "type": "Tesis central",
+    "answer": "La teoría del lenguaje considera que un niño no aprende el lenguaje por exposición e imitación, sino que aprende a relacionar su conocimiento innato de las estructuras sintácticas del lenguaje.",
+    "image": "chomsky.jpg"
   }
 ]

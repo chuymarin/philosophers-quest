@@ -298,7 +298,7 @@ class Game extends Component {
               </div>
               <div className="PlayerArea">
                 <div className="PlayerImageArea">
-                  <img className="PlayerImage" src="./assets/frodo.png" alt="Frodo" />
+                  <img className="PlayerImage" src="./assets/Dumbledore.png" alt="Dumbledore" />
                 </div>
                 <div className="PlayerAnswerArea">
                   <ul className="PlayerAnswerList">

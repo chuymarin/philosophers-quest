@@ -1,0 +1,63 @@
+Dumbledore.png
+alves.png
+anderso.jpeg
+aristoteles.jpg
+ausubel.png
+bandura.jpeg
+bergmann.jpeg
+bochenski.png
+bruner .jpeg
+bunge .jpeg
+carnap.png
+cesarman.png
+chomsky.jpeg
+comte .png
+copernico.jpg
+democrito .png
+duhem.png
+einstein .png
+feyerabend .png
+fleming.png
+fraire .png
+frege.png
+freud .jpeg
+gagne.png
+guthrie .png
+hegel.jpeg
+hempel.png
+hooke .jpeg
+hume.png
+kant .png
+klimovsky .png
+koffka.png
+kohlberg.jpeg
+kuhn.png
+lakatos.jpeg
+laudan .png
+lavoisier.png
+lewis.png
+mach.png
+moore.png
+nagel .png
+newton .png
+novak.jpg
+parmenides.jpg
+pavlov.png
+piaget.png
+pitagoras.jpg
+platon.jpg
+poincare .png
+popper.jpeg
+reich .png
+reichenbach.png
+roger.jpeg
+russell.png
+seneca.jpeg
+skinner.jpeg
+socrates.jpg
+sperry.png
+toleman.jpeg
+vygotsky.jpeg
+waismann.png
+watson.png
+wittgenstein.png
