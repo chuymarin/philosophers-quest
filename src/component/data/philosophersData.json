@@ -18,7 +18,7 @@
     "name": "Parménides ",
     "type": "Paradigma",
     "answer": "Recae en que el “ser” es una unidad indivisible, finito, inmutable e ingénito, elemento único que da comienzo a todas las cosas en el universo.",
-    "image": "parmenides.jpeg"
+    "image": "parmenides.jpg"
   },
   {
     "id": 4,
@@ -208,7 +208,7 @@
     "name": "Albert Einstein",
     "type": "Método",
     "answer": "Logró dilucidar leyes del universo a través del método deductivo, sin experimentación, a partir de predicciones, hipótesis, estudios, comparaciones y fórmulas matemáticas.",
-    "image": "einsten.png"
+    "image": "einstein.png"
   },
 
   {
@@ -413,7 +413,7 @@
     "name": "Carl Roger",
     "type": "Tesis central",
     "answer": "Terapia centrada en la persona.",
-    "image": "roger.jpg"
+    "image": "roger.jpeg"
   },
   {
     "id": 60,

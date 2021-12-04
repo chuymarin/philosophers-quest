@@ -77,12 +77,14 @@ class Game extends Component {
   }
 
   getRandomPhilosophersList = () => {
-    let sortedList = philosophersData.sort();
+    let sortedList = philosophersData;
+    sortedList = sortedList.sort(() => Math.random() - 0.5);
     let randomPhilosophersList = [];
     randomPhilosophersList.push(sortedList[0]);
     randomPhilosophersList.push(sortedList[1]);
     randomPhilosophersList.push(sortedList[2]);
-    return randomPhilosophersList.sort();
+    randomPhilosophersList = randomPhilosophersList.sort(() => Math.random() - 0.5);
+    return randomPhilosophersList;
   }
 
   startGame = () => {
@@ -90,13 +92,14 @@ class Game extends Component {
     let newPhilosopherDialog = this.state.game.philosopherDialog;
     let initDialog = "Hola yo soy " + newPhilosopher.name + " Para dejarte pasar, tienes que decir cual es mi " + newPhilosopher.type;
     newPhilosopherDialog.push(initDialog);
-    let randomPhilosophersList = this.getRandomPhilosophersList();
-    randomPhilosophersList.push(newPhilosopher);
+    let newRandomPhilosophersList = this.getRandomPhilosophersList();
+    newRandomPhilosophersList.push(newPhilosopher);
+    newRandomPhilosophersList = newRandomPhilosophersList.sort(() => Math.random() - 0.5);
     this.setState((state, props) => ({
       game: {
         ...state.game,
         gameStarted: true,
-        randomPhilosophersList: randomPhilosophersList,
+        randomPhilosophersList: newRandomPhilosophersList,
         philosopherDialog: newPhilosopherDialog
       },
       philosopher: newPhilosopher,
@@ -177,6 +180,7 @@ class Game extends Component {
     // get new randomPhilosophersList
     let newRandomPhilosophersList = this.getRandomPhilosophersList();
     newRandomPhilosophersList.push(newPhilosopher);
+    newRandomPhilosophersList = newRandomPhilosophersList.sort(() => Math.random() - 0.5);
     // set state
     this.setState((state, props) => ({
       philosopher: newPhilosopher,
@@ -303,7 +307,7 @@ class Game extends Component {
                 <div className="PlayerAnswerArea">
                   <ul className="PlayerAnswerList">
                   {this.state.game.randomPhilosophersList.map(philosopher => (
-                    <li className="PlayerAnswerOption" onClick={this.checkAnswer.bind(this)} data-id={philosopher.id}>- {philosopher.answer}.</li>
+                    <li className="PlayerAnswerOption" onClick={this.checkAnswer.bind(this)} data-id={philosopher.id}>- {philosopher.answer}</li>
                   ))}
                   </ul>
                 </div>
